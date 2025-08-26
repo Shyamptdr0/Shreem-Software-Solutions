@@ -15,6 +15,7 @@ import img3 from "../../public/image/service/app-development.png";
 import img4 from "../../public/image/service/ai.png";
 import img5 from "../../public/image/service/cloud-hosting.png";
 import img6 from "../../public/image/service/consultant.png";
+import Link from "next/link";
 
 export default function Hero() {
     const items = [{
@@ -32,10 +33,10 @@ export default function Hero() {
     return (<div className="px-4 sm:px-6 md:px-20">
         {/* Hero Section */}
         <section
-            className="hero-section min-h-screen grid md:grid-cols-2 items-center gap-12 bg-gradient-to-r from-cyan-50 to-white rounded-2xl shadow-sm p-6">
+            className="hero-section min-h-screen grid md:grid-cols-2 items-center gap-12 bg-gradient-to-r from-cyan-50 to-white rounded-2xl  p-6">
             {/* Left Side */}
             <div>
-                <h1 className="font-varela text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+                <h1 className="font-varela text-3xl mt-15 sm:text-5xl font-bold text-gray-900 leading-tight">
                     Develop your skills <br/> in a new and unique <br/> way
                 </h1>
                 <p className="mt-4 text-lg sm:text-xl text-gray-700">
@@ -43,11 +44,11 @@ export default function Hero() {
                     we build technology that empowers your business to grow, adapt, and lead.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
-                    <a href="#"
+                    <a href="/Contact"
                        className="bg-cyan-600 text-white font-medium px-6 py-3 rounded-full shadow-lg hover:bg-cyan-700 transition">
                         Contact Us
                     </a>
-                    <a href="#"
+                    <a href="#budget"
                        className="border border-cyan-600 text-cyan-700 font-medium px-6 py-3 rounded-full hover:bg-cyan-600 hover:text-white transition">
                         Request Your Quotation
                     </a>
@@ -91,7 +92,7 @@ export default function Hero() {
                         </p>
                     </div>
                     <a
-                        href="#"
+                        href="/About"
                         className="border-2 border-cyan-600 bg-white text-cyan-700 px-6 py-3 rounded-full hover:bg-cyan-600 hover:text-white transition"
                     >
                         More About Us
@@ -164,9 +165,8 @@ export default function Hero() {
             </div>
         </section>
 
-
-        <section className="py-20 bg-gray-50">
-            <div className="flex flex-col md:flex-row items-center gap-10"> {/* Form */}
+        <section id="budget" className="py-20 bg-gray-50">
+            <div className="flex flex-col md:flex-row md:items-center items-stretch gap-10"> {/* Form */}
                 <div className="flex-1 bg-white shadow-lg rounded-lg p-8">
                     <form id="home-form" method="post" className="flex flex-col gap-6"><h2
                         className="text-2xl font-bold mb-6">Have anything <br/> for us?</h2>
@@ -211,7 +211,9 @@ export default function Hero() {
             <h1 className="text-3xl font-bold text-gray-900 mb-6">Let’s Build Something Great Together 🚀</h1>
             <p className="text-gray-600 mb-8">From startups to enterprises, we help businesses innovate and
                 scale.</p>
-            <Button className="bg-cyan-600 hover:bg-cyan-700 px-8 py-4 text-lg">Get in Touch</Button>
+            <Link href="/Contact">
+                <Button className="bg-cyan-600 hover:bg-cyan-700 px-8 py-4 cursor-pointer text-lg">Get in Touch</Button>
+            </Link>
         </section>
     </div>);
 }

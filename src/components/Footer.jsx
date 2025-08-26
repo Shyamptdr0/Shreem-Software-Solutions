@@ -26,23 +26,28 @@ export default function Footer() {
                         <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/" className="text-black hover:text-purple-600 transition-colors">
+                                <Link href="/" className="text-black hover:text-sky-600 transition-colors">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/About" className="text-black hover:text-purple-600 transition-colors">
+                                <Link href="/About" className="text-black hover:text-sky-600 transition-colors">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/Service" className="text-black hover:text-purple-600 transition-colors">
+                                <Link href="/Service" className="text-black hover:text-sky-600 transition-colors">
                                     Our Service
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/Portfolio" className="text-black hover:text-purple-600 transition-colors">
+                                <Link href="/Portfolio" className="text-black hover:text-sky-600 transition-colors">
                                     Portfolio
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/Blog" className="text-black hover:text-sky-600 transition-colors">
+                                    Blog
                                 </Link>
                             </li>
                         </ul>
@@ -88,7 +93,7 @@ export default function Footer() {
                 <div className="border-t border-gray-700 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-400 mb-4 md:mb-0">
-                            © 2025 Shreem Software Solutions. All rights reserved.
+                            © 2025 Shreem Software Solutions. <br/> All rights reserved.
                         </p>
                         <div className="flex space-x-6">
                             <Link href="#" className="text-gray-400 hover:text-purple-600 transition-colors">

@@ -83,7 +83,7 @@ export default function About() {
                             href="#"
                             className="border-2 border-sky-600 bg-white text-sky-600 px-6 py-3 rounded-full hover:bg-sky-600 hover:text-white transition font-semibold shadow-md"
                         >
-                            More About Us
+                            Visit Our Profile
                         </a>
                     </motion.div>
                 </div>
@@ -162,7 +162,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold mb-4">Let’s Build Something Great Together</h2>
                 <p className="mb-6 text-lg">We’d love to discuss how we can bring your ideas to life.</p>
                 <a
-                    href="/contact"
+                    href="/Contact"
                     className="px-8 py-3 bg-white text-sky-600 font-semibold rounded-full shadow hover:bg-gray-100 transition"
                 >
                     Contact Us

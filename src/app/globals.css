@@ -126,16 +126,6 @@
 
 /*----------------------------*/
 
-
-
-/*@tailwind base;*/
-/*@tailwind components;*/
-/*@tailwind utilities;*/
-
-/* --- Google fonts (matches your HTML) --- */
-/*@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&family=Varela+Round&display=swap');*/
-
-/* --- Your custom CSS from styles.css --- */
 .hero-rotated-bg {
   position: absolute;
   top: -292px;
@@ -159,15 +149,6 @@
   object-fit: cover;
   transform: rotate(58.878deg) scale(1.2);
 }
-
-/*header, header nav, header span {*/
-/*  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",*/
-/*  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;*/
-/*}*/
-
-/*.fontStyle {*/
-/*  font-family: "Varela Round", sans-serif;*/
-/*}*/
 
 .serviceBox {
   width: 290px;
