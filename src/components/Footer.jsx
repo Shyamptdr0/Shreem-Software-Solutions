@@ -11,12 +11,12 @@ export default function Footer() {
                     <div>
                         <div className="flex text-5xl font-bold text-black mb-4">
                             <div>
-                                <Image src={logo} alt="Shreem Logo" className="h-15 w-10"/>
+                                <Image src={logo} alt="Shreem Logo" className="h-13 w-10"/>
                             </div>
                             <div className="flex items-center mt-4">
-                <span className="text-[40px] mb-2 font-semibold text-black">
-                  Shreem
-                </span>
+                               <span className="text-[40px] mb-2 font-semibold text-black">
+                                      Shreem
+                               </span>
                             </div>
                         </div>
                     </div>

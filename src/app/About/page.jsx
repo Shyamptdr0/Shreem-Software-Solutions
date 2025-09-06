@@ -36,7 +36,7 @@ export default function About() {
     return (
         <div className="ml-20 mr-20 mt-25">
             {/* Hero */}
-            <section className="h-60 flex justify-center items-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white rounded-2xl shadow-lg relative overflow-hidden">
+            <section className="h-25 flex justify-center items-center bg-gradient-to-r  text-black rounded-2xl  relative overflow-hidden">
             {/* Heading */}
             <motion.h1
                 className="text-center font-extrabold text-5xl drop-shadow-lg relative z-10"
@@ -62,7 +62,7 @@ export default function About() {
                 <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center">
                     <div className="w-full md:w-1/2 relative">
                         <div className="absolute -z-10 top-4 left-4 w-full h-full rounded-lg bg-gradient-to-tr from-sky-400 via-blue-300 to-indigo-300 blur-lg"></div>
-                        <img src="/image/photo 1.png" alt="about" className="w-full h-auto rounded-lg shadow-xl" />
+                        <img src="/image/image%208.jpg" alt="about" className="w-full h-auto rounded-lg shadow-xl" />
                     </div>
                     <motion.div
                         className="w-full md:w-1/2 h-auto"
@@ -72,7 +72,7 @@ export default function About() {
                     >
                         <h1 className="text-4xl font-bold mb-4 text-sky-600">Founder's Message</h1>
                         <div className="border border-gray-300 p-6 rounded-lg mb-6 bg-white shadow-xl">
-                            <p className="text-gray-700 text-lg leading-relaxed">
+                            <p className="text-gray-700 text-lg leading-relaxed ">
                                 “At Shreem Software Solutions, we believe in building more than just software — we build trust,
                                 growth, and long-term partnerships. Our focus is on delivering simple, efficient, and user-friendly
                                 technology that makes a real difference.”
@@ -95,8 +95,8 @@ export default function About() {
                     <div className="absolute top-1/2 left-0 right-0 border-t-4 border-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 z-0"></div>
 
                     <motion.div style={{ x }} className="flex gap-12 items-center relative z-10">
-                        <div className="flex-shrink-0 min-w-[320px] flex flex-col justify-center items-center relative">
-                            <h2 className="text-4xl font-extrabold text-sky-600 tracking-wide bg-white/80 px-6 py-2 rounded-xl shadow-lg">
+                        <div className="flex-shrink-0 min-w-[420px] flex flex-col justify-center items-center relative">
+                            <h2 className="text-4xl font-extrabold text-sky-600 tracking-wide bg-white/80 px-8 py-2 rounded-xl shadow-lg">
                                 Core Values
                             </h2>
                         </div>

@@ -28,9 +28,9 @@ export default function Blog() {
     ];
 
     return (
-        <div className="ml-10 mr-10 mt-20">
+        <div className="ml-10 mr-10 mt-30">
             {/* Header Section */}
-            <section className="h-60 flex justify-center items-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white rounded-2xl shadow-lg relative overflow-hidden">
+            <section className="h-25 flex justify-center items-center bg-gradient-to-r  text-black rounded-2xl  relative overflow-hidden">
                 <motion.h1
                     className="text-center font-extrabold text-5xl drop-shadow-lg relative z-10"
                     initial={{ opacity: 0, y: 40 }}

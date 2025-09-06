@@ -29,12 +29,12 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
-                ${scrolled ? "bg-white shadow-lg py-2" : "py-0 md:bg-transparent bg-white"}`}
+                ${scrolled ? "bg-white shadow-lg py-1" : "py-0 md:bg-transparent bg-white"}`}
         >
             <div className="mx-auto flex justify-between items-center px-6 md:px-10">
                 {/* ✅ Transparent blur only on logo + nav */}
                 <div
-                    className={`flex items-center gap-6 rounded-full px-0 py-2 transition 
+                    className={`flex items-center gap-6 rounded-md px-0 py-2 transition 
                         ${
                         scrolled
                             ? "bg-white"
@@ -42,15 +42,16 @@ export default function Header() {
                     }`}
                 >
                     {/* Logo */}
-                    <div className="flex items-center justify-center space-x-3">
-                        <Link href="/" className="flex items-center space-x-3">
-                            <Image
-                                src={logo}
-                                alt="Shreem Logo"
-                                className="h-10 w-auto"
-                                priority
-                            />
-                            <span className="font-sans text-2xl font-semibold text-black">Shreem</span>
+                    <div className="flex text-5xl font-bold text-black mb-2">
+                        <Link href="/" className="flex items-center ">
+                            <div>
+                                <Image src={logo} alt="Shreem Logo" className="h-12 w-10"/>
+                            </div>
+                            <div className="flex items-center mt-4">
+                               <span className="text-[35px] mb-2 font-semibold text-black">
+                                      Shreem
+                               </span>
+                            </div>
                         </Link>
                     </div>
 
@@ -67,10 +68,10 @@ export default function Header() {
                 </div>
 
                 {/* ✅ Get In Touch button stays clean, no blur */}
-                <div className="hidden md:block">
+                <div className="hidden md:block sm:text-[13px]">
                     <Link
                         href="/Contact"
-                        className="bg-cyan-500 text-white px-5 py-3 rounded-full font-medium hover:bg-cyan-600 transition"
+                        className="bg-sky-500 text-white  px-4 py-3  sm:px-2 md:px-3  rounded-full font-medium hover:bg-sky-800 transition"
                     >
                         Get In Touch
                     </Link>
@@ -96,7 +97,7 @@ export default function Header() {
                         <Link
                             href="/Contact"
                             onClick={() => setMobileOpen(false)}
-                            className="bg-cyan-500 text-white px-5 py-2 rounded-full font-medium hover:bg-cyan-600 transition"
+                            className="bg-sky-900 text-white px-5 py-2 rounded-full font-medium hover:bg-sky-600 transition"
                         >
                             Get In Touch
                         </Link>

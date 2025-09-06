@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -161,27 +162,90 @@
   max-width: 1200px;
 }
 
+/*:root {*/
+/*    --font-fredoka: "Fredoka", sans-serif;*/
+/*    --font-poppins: "Poppins", sans-serif;*/
+/*    --font-varela: "Varela Round", sans-serif;*/
+/*}*/
+
+/*!* default *!*/
+/*.font-sans {*/
+/*    font-family: var(--font-fredoka), sans-serif;*/
+/*}*/
+
+/*!* optional helpers *!*/
+/*.font-fredoka {*/
+/*    font-family: var(--font-fredoka), sans-serif;*/
+/*}*/
+
+/*.font-poppins {*/
+/*    font-family: var(--font-poppins), sans-serif;*/
+/*}*/
+
+/*.font-varela {*/
+/*    font-family: var(--font-varela), sans-serif;*/
+/*}*/
+
+
 :root {
-    --font-fredoka: "Fredoka", sans-serif;
-    --font-poppins: "Poppins", sans-serif;
-    --font-varela: "Varela Round", sans-serif;
+  --font-roboto-slab: "Roboto Slab", serif;
+}
+/* default (optional: if you want TASA Orbiter to be your main sans font) */
+/*.font-sans {*/
+/*  font-family: var(--font-tasa), sans-serif;*/
+/*}*/
+
+/*!* optional helpers *!*/
+/*.font-fredoka {*/
+/*  font-family: var(--font-fredoka), sans-serif;*/
+/*}*/
+
+/*.font-poppins {*/
+/*  font-family: var(--font-poppins), sans-serif;*/
+/*}*/
+
+/*.font-varela {*/
+/*  font-family: var(--font-varela), sans-serif;*/
+/*}*/
+
+/*.font-tasa {*/
+/*  font-family: var(--font-tasa), sans-serif;*/
+/*}*/
+
+/*.font-oswald {*/
+/*  font-family: var(--font-oswald);*/
+/*}*/
+
+.font-roboto-slab {
+  font-family: var(--font-roboto-slab);
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-/* default */
-.font-sans {
-    font-family: var(--font-fredoka), sans-serif;
+/* 5. Example weight helpers (optional, Tailwind already has font-bold, font-light, etc.) */
+.font-roboto-light {
+  font-family: var(--font-roboto-slab);
+  font-weight: 300;
 }
 
-/* optional helpers */
-.font-fredoka {
-    font-family: var(--font-fredoka), sans-serif;
+.font-roboto-regular {
+  font-family: var(--font-roboto-slab);
+  font-weight: 400;
 }
 
-.font-poppins {
-    font-family: var(--font-poppins), sans-serif;
+.font-roboto-bold {
+  font-family: var(--font-roboto-slab);
+  font-weight: 700;
 }
+/*.font-lin {*/
+/*  font-family: var(--font-libertinus-serif-display-regular);*/
+/*}*/
 
-.font-varela {
-    font-family: var(--font-varela), sans-serif;
+
+
+body {
+  font-family: var(--font-roboto-slab);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400; /* default regular */
 }
-

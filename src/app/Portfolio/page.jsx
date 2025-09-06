@@ -29,9 +29,9 @@ export default function Portfolio() {
     ];
 
     return (
-        <div className="ml-10 mr-10 mt-20">
+        <div className="ml-10 mr-10 mt-30 min-h-screen">
             {/* Header Section */}
-            <section className="h-60 flex justify-center items-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white rounded-2xl shadow-lg relative overflow-hidden">
+            <section className="h-25 flex justify-center items-center bg-gradient-to-r  text-black rounded-2xl  relative overflow-hidden">
                 <motion.h1
                     className="text-center font-extrabold text-5xl drop-shadow-lg relative z-10"
                     initial={{ opacity: 0, y: 40 }}
@@ -48,30 +48,37 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 mix-blend-soft-light pointer-events-none"></div>
             </section>
 
-            {/* Portfolio Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: index * 0.2 }}
-                    >
-                        <div className="relative w-full h-52">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-52 object-cover rounded-t-2xl"
-                            />
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
-                            <p className="text-gray-600 text-sm">{project.desc}</p>
-                        </div>
-                    </motion.div>
-                ))}
+
+
+            <div className="flex items-center justify-center ">
+                <h1 className="text-4xl font-bold">Coming Soon...</h1>
             </div>
+
+
+            {/*/!* Portfolio Grid *!/*/}
+            {/*<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">*/}
+            {/*    {projects.map((project, index) => (*/}
+            {/*        <motion.div*/}
+            {/*            key={index}*/}
+            {/*            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"*/}
+            {/*            initial={{ opacity: 0, y: 50 }}*/}
+            {/*            animate={{ opacity: 1, y: 0 }}*/}
+            {/*            transition={{ duration: 0.8, delay: index * 0.2 }}*/}
+            {/*        >*/}
+            {/*            <div className="relative w-full h-52">*/}
+            {/*                <img*/}
+            {/*                    src={project.image}*/}
+            {/*                    alt={project.title}*/}
+            {/*                    className="w-full h-52 object-cover rounded-t-2xl"*/}
+            {/*                />*/}
+            {/*            </div>*/}
+            {/*            <div className="p-6">*/}
+            {/*                <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>*/}
+            {/*                <p className="text-gray-600 text-sm">{project.desc}</p>*/}
+            {/*            </div>*/}
+            {/*        </motion.div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
         </div>
     );
 }
