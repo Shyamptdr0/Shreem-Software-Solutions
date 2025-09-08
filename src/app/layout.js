@@ -10,7 +10,7 @@ import { Fredoka, Poppins, Varela_Round } from "next/font/google";
 export const metadata = {
     metadataBase: new URL("https://shreemsoftwaresolutions.com"),
     title: {
-        default: "Shreem Software Solutions | IT Services & Web Development",
+        default: "Shreem Software Solutions",
         template: "%s | Shreem Software Solutions",
     },
     description:
@@ -28,7 +28,12 @@ export const metadata = {
         "app development",
         "website design",
     ],
-    authors: [{ name: "Shreem Software Solutions", url: "https://shreemsoftwaresolutions.com" }],
+    authors: [
+        {
+            name: "Shreem Software Solutions",
+            url: "https://shreemsoftwaresolutions.com",
+        },
+    ],
     creator: "Shreem Software Solutions",
     publisher: "Shreem Software Solutions",
     openGraph: {
@@ -39,7 +44,7 @@ export const metadata = {
         siteName: "Shreem Software Solutions",
         images: [
             {
-                url: "/shreemlogo.png", // 512x512 logo in /public
+                url: "/shreem_logo.png", // 512x512 in /public
                 width: 1200,
                 height: 830,
                 alt: "Shreem Software Solutions - IT Services & Web Development",
@@ -54,12 +59,26 @@ export const metadata = {
         description:
             "Custom apps, scalable platforms, and IT services. Turning your ideas into intelligent digital solutions.",
         images: ["/shreem_logo.png"],
-        creator: "@ShreemSoftware", // update if you make Twitter account
+        creator: "@ShreemSoftware", // update if Twitter is created
     },
     icons: {
-        icon: "/shreem_logo.png", // classic favicon
-        shortcut: "/shreem_logo.png",
-        apple: "/shreem_logo.png", // 180x180 for Apple devices
+        icon: "/favicon.ico", // main favicon
+        shortcut: "/favicon.ico",
+        apple: "/apple-touch-icon.png", // for iOS
+        other: [
+            {
+                rel: "icon",
+                url: "/favicon-32x32.png",
+                sizes: "32x32",
+                type: "image/png",
+            },
+            {
+                rel: "icon",
+                url: "/favicon-16x16.png",
+                sizes: "16x16",
+                type: "image/png",
+            },
+        ],
     },
     manifest: "/site.webmanifest", // optional: for PWA
     category: "technology",

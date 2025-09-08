@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
-import logo from "../../public/image/Shreem logo 2.png";
+import logo from "../../public/Shreem logo 2.png";
 import {HiOutlineMenu, HiOutlineX} from "react-icons/hi";
 
 export default function Header() {
@@ -14,27 +14,27 @@ export default function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > window.innerHeight);
+            setScrolled(window.scrollY > 0); // <-- change here
         };
 
-        if (pathname === "/") {
-            setScrolled(window.scrollY > window.innerHeight);
-            window.addEventListener("scroll", handleScroll);
-            return () => window.removeEventListener("scroll", handleScroll);
-        } else {
-            setScrolled(true); // other pages always white
-        }
+        window.addEventListener("scroll", handleScroll);
+
+        // Set initial state
+        setScrolled(window.scrollY > 0);
+
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [pathname]);
+
 
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
-                ${scrolled ? "bg-white shadow-lg py-1" : "py-0 md:bg-transparent bg-white"}`}
+                ${scrolled ? "bg-white shadow-lg py-0" : "py-0 md:bg-transparent bg-white"}`}
         >
             <div className="mx-auto flex justify-between items-center px-6 md:px-10">
                 {/* ✅ Transparent blur only on logo + nav */}
                 <div
-                    className={`flex items-center gap-6 rounded-md px-0 py-2 transition 
+                    className={`flex items-center gap-6 rounded-md px-0 py-0 transition 
                         ${
                         scrolled
                             ? "bg-white"
@@ -63,7 +63,7 @@ export default function Header() {
                         <Link href="/About" className="hover:text-sky-600">About</Link>
                         <Link href="/Service" className="hover:text-sky-600">Service</Link>
                         <Link href="/Portfolio" className="hover:text-sky-600">Portfolio</Link>
-                        <Link href="/Blog" className="hover:text-sky-600">Blog</Link>
+                        {/*<Link href="/Blog" className="hover:text-sky-600">Blog</Link>*/}
                     </nav>
                 </div>
 
@@ -93,7 +93,7 @@ export default function Header() {
                         <Link href="/About" onClick={() => setMobileOpen(false)}>About</Link>
                         <Link href="/Service" onClick={() => setMobileOpen(false)}>Service</Link>
                         <Link href="/Portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link>
-                        <Link href="/Blog" onClick={() => setMobileOpen(false)}>Blog</Link>
+                        {/*<Link href="/Blog" onClick={() => setMobileOpen(false)}>Blog</Link>*/}
                         <Link
                             href="/Contact"
                             onClick={() => setMobileOpen(false)}

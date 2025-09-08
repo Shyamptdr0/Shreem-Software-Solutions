@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Hero from "@/components/Hero";
-import bgImage from "../../public/image/bg 2.jpg";
+import bgImage from "../../public/bg 2.jpg";
 
 export default function Home() {
     return (

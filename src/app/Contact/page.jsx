@@ -6,9 +6,9 @@ import { Mail, Phone, MapPin, Clock, Linkedin, Twitter, Facebook } from "lucide-
 
 export default function Contact() {
     return (
-        <div className="ml-10 mr-10 mt-30">
+        <div className="ml-10 mr-10 mt-30" >
             {/* Header Section */}
-            <section className="h-60 flex justify-center items-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white rounded-2xl shadow-lg relative overflow-hidden">
+            <section id="contact" className="h-60 flex justify-center items-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white rounded-2xl shadow-lg relative overflow-hidden">
                 <motion.h1
                     className="text-center font-extrabold text-5xl drop-shadow-lg relative z-10"
                     initial={{ opacity: 0, y: 40 }}
@@ -80,15 +80,20 @@ export default function Contact() {
                         </li>
                         <li className="flex items-center gap-3">
                             <Phone className="w-5 h-5 text-sky-500" />
-                            +91 98765 43210
+                            <a href="tel:+919876543210" className="hover:text-sky-700 transition">
+                                +91 98765 43210
+                            </a>
                         </li>
                         <li className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-sky-500" />
-                            info@shreemsoftwaresolutions.com
+                            <a href="mailto:shreem.sofware.solutions@gmail.com" className="hover:text-sky-700 transition">
+                                shreem.sofware.solutions@gmail.com
+                            </a>
                         </li>
+
                         <li className="flex items-center gap-3">
                             <Clock className="w-5 h-5 text-sky-500" />
-                            Mon - Sat: 9:00 AM - 7:00 PM
+                            Mon - Sat: 10:00 AM - 5:00 PM
                         </li>
                     </ul>
 

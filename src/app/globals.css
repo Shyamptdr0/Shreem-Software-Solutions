@@ -42,6 +42,24 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 :root {
@@ -122,9 +140,6 @@
   }
 }
 
-
-
-
 /*----------------------------*/
 
 .hero-rotated-bg {
@@ -186,7 +201,6 @@
 /*    font-family: var(--font-varela), sans-serif;*/
 /*}*/
 
-
 :root {
   --font-roboto-slab: "Roboto Slab", serif;
 }
@@ -240,8 +254,6 @@
 /*.font-lin {*/
 /*  font-family: var(--font-libertinus-serif-display-regular);*/
 /*}*/
-
-
 
 body {
   font-family: var(--font-roboto-slab);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../public/image/Shreem logo 2.png";
+import logo from "../../public/Shreem logo 2.png";
 
 export default function Footer() {
     return (
@@ -71,19 +71,23 @@ export default function Footer() {
                         <div className="space-y-3">
                             <div className="flex items-center space-x-3">
                                 <i className="ri-map-pin-line text-purple-700"></i>
-                                <span>123 Farm Valley Road, Green Hills, CA 90210</span>
+                                <span> Nutan Nagar, Near Santoshi Temple, Khargone, MP - 451001</span>
                             </div>
                             <div className="flex items-center space-x-3">
                                 <i className="ri-phone-line text-purple-700"></i>
-                                <span>(555) 123-FARM</span>
+                                <a href="tel:+919876543210" className="hover:text-sky-600 transition">
+                                    +91 98765 43210
+                                </a>
                             </div>
                             <div className="flex items-center space-x-3">
                                 <i className="ri-mail-line text-purple-700"></i>
-                                <span>hello@greenharvest.com</span>
+                                <a href="mailto:shreem.sofware.solutions@gmail.com" className="hover:text-sky-600 transition">
+                                    shreem.sofware.solutions@gmail.com
+                                </a>
                             </div>
                             <div className="flex items-center space-x-3">
                                 <i className="ri-time-line text-purple-700"></i>
-                                <span>Mon-Sat: 7AM-6PM</span>
+                                <span>Mon-Sat: 10AM-5PM</span>
                             </div>
                         </div>
                     </div>

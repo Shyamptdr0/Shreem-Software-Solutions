@@ -6,21 +6,21 @@ import {
     Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
 } from "@/components/ui/card";
 
-import budgetImg from "../../public/image/Budget.jpg"
-import aboutImage from "../../public/image/about.jpg";
-import bgImages from "../../public/image/bg 2.jpg";
-import img1 from "../../public/image/service/java 1.png";
-import img2 from "../../public/image/service/website-codes.png";
-import img3 from "../../public/image/service/app-development.png";
-import img4 from "../../public/image/service/ai.png";
-import img5 from "../../public/image/service/cloud-hosting.png";
-import img6 from "../../public/image/service/consultant.png";
+import budgetImg from "../../public/Budget.jpg"
+
+import bgImages from "../../public/bg 2.jpg";
+import img1 from "../../public/java 1.png";
+import img2 from "../../public/website-codes.png";
+import img3 from "../../public/app-development.png";
+import img4 from "../../public/ai.png";
+import img5 from "../../public/cloud-hosting.png";
+import img6 from "../../public/consultant.png";
 import Link from "next/link";
 
-import about1 from "../../public/image/image 1.jpg"
-import about2 from "../../public/image/image 6.jpg"
-import about3 from "../../public/image/image 8.jpg"
-import about4 from "../../public/image/image 4.jpg"
+import about1 from "../../public/image 1.jpg"
+import about2 from "../../public/image 6.jpg"
+import about3 from "../../public/image 8.jpg"
+import about4 from "../../public/image 4.jpg"
 
 
 export default function Hero() {
@@ -112,15 +112,24 @@ export default function Hero() {
                 </div>
 
                 {/* Right Side - Content */}
-                <div className="max-w-md ml-30">
+                <div className="max-w-md ml-30 relative">
+                    {/* Vertical line + dot (MOBILE ONLY) */}
+                    <div className="absolute -left-6 top-2 bottom-0 flex flex-col items-center md:hidden">
+                        {/* Dot at top */}
+                        <div className="w-3 h-3 rounded-full bg-gray-600"></div>
+                        {/* Full height line that reaches the button */}
+                        <div className="w-[2px] flex-1 bg-gray-400"></div>
+                    </div>
+
                     <h2 className="text-4xl font-bold text-gray-900 mb-6">Why choose us</h2>
                     <p className="text-lg text-gray-700 italic mb-6">
-                        "Our journey began with a simple idea of making this world more functional."
+                        "Our journey began with a simple idea of making this world more
+                        functional."
                     </p>
                     <p className="text-gray-600 mb-6">
-                        We collaborate with organizations that are keen to transform the digital industry
-                        with technology. Using innovative processes, we help you ideate, design, and
-                        build scalable solutions.
+                        We collaborate with organizations that are keen to transform the digital
+                        industry with technology. Using innovative processes, we help you
+                        ideate, design, and build scalable solutions.
                     </p>
                     <p className="text-gray-600 mb-2">
                         A freelancing-driven company providing innovative software solutions.
@@ -129,7 +138,8 @@ export default function Hero() {
                         From web apps to mobile platforms, we craft digital products that scale.
                     </p>
                     <p className="text-gray-600 mb-8">
-                        Dedicated to startups, small businesses, and enterprises looking to launch fast.
+                        Dedicated to startups, small businesses, and enterprises looking to
+                        launch fast.
                     </p>
 
                     <Link href={"/About"}>
@@ -140,7 +150,6 @@ export default function Hero() {
                 </div>
             </div>
         </section>
-
 
 
         {/* Services Section */}
