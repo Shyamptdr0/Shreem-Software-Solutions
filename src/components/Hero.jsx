@@ -50,10 +50,9 @@ export default function Hero() {
                     we build technology that empowers your business to grow, adapt, and lead.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
-                    <a href="/Contact"
-                       className="bg-sky-800 text-white font-medium px-6 py-3 rounded-md shadow-lg hover:bg-sky-700 transition">
-                        Contact Us
-                    </a>
+                    <Link href="/Contact">
+                        <Button className="bg-sky-800 text-white font-medium px-6 py-6 rounded-md shadow-lg hover:bg-sky-700 transition cursor-pointer">Contact Us</Button>
+                    </Link>
                     <a href="#budget"
                        className="border border-sky-600 text-sky-700 font-medium px-6 py-3 rounded-md hover:bg-sky-900 hover:text-white transition">
                         Request Your Quotation
