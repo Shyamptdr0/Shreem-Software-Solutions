@@ -17,10 +17,10 @@ import img5 from "../../public/cloud-hosting.png";
 import img6 from "../../public/consultant.png";
 import Link from "next/link";
 
-import about1 from "../../public/image 1.jpg"
-import about2 from "../../public/image 6.jpg"
-import about3 from "../../public/image 8.jpg"
-import about4 from "../../public/image 4.jpg"
+import about1 from "../../public/sdlc 1.png"
+import about2 from "../../public/imp1.jpg"
+import about3 from "../../public/imp12.jpg"
+import about4 from "../../public/imp13.jpg"
 
 
 export default function Hero() {
@@ -80,35 +80,8 @@ export default function Hero() {
         <section className="py-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Side - Image Collage */}
-                <div className="grid grid-cols-2 gap-4">
-                    <div className="w-full h-64">
-                        <Image
-                            src={about1}
-                            alt="About 1"
-                            className="w-full h-full rounded-lg shadow-md object-cover"
-                        />
-                    </div>
-                    <div className="w-full h-64 mt-8">
-                        <Image
-                            src={about2}
-                            alt="About 2"
-                            className="w-full h-full rounded-lg shadow-md object-cover"
-                        />
-                    </div>
-                    <div className="w-full h-64">
-                        <Image
-                            src={about3}
-                            alt="About 3"
-                            className="w-full h-full rounded-lg shadow-md object-cover"
-                        />
-                    </div>
-                    <div className="w-full h-[60%] mt-8">
-                        <Image
-                            src={about4}
-                            alt="About 4"
-                            className="w-full h-full rounded-lg shadow-md object-cover"
-                        />
-                    </div>
+                <div className="">
+                    <Image src={about1} alt="image sdlc"/>
                 </div>
 
                 {/* Right Side - Content */}

@@ -3,12 +3,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Linkedin, Twitter, Facebook } from "lucide-react";
+import Image from "next/image";
+
+// 👉 Replace this with your own image (e.g., contact illustration or office photo)
+import contactImg from "../../../public/imp15.jpg";
 
 export default function Contact() {
     return (
-        <div className="ml-10 mr-10 mt-30" >
+        <div className="ml-10 mr-10 mt-20">
             {/* Header Section */}
-            <section id="contact" className="h-60 flex justify-center items-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white rounded-2xl shadow-lg relative overflow-hidden">
+            <section
+                id="contact"
+                className=" flex justify-center items-center  text-black  relative overflow-hidden"
+            >
                 <motion.h1
                     className="text-center font-extrabold text-5xl drop-shadow-lg relative z-10"
                     initial={{ opacity: 0, y: 40 }}
@@ -25,51 +32,63 @@ export default function Contact() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 mix-blend-soft-light pointer-events-none"></div>
             </section>
 
-            {/* Contact Form */}
-            <div className="max-w-3xl mx-auto mt-12 bg-white rounded-2xl shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-                    Get In Touch
-                </h2>
-                <form className="space-y-6">
-                    <div>
-                        <label className="block text-gray-700 font-medium mb-2">Name</label>
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-                        />
-                    </div>
+            {/* Contact Section (Image + Form) */}
+            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mt-12 items-center">
+                {/* Left Side - Image */}
+                <div className="flex justify-center">
+                    <Image
+                        src={contactImg}
+                        alt="Contact Illustration"
+                        className="rounded-2xl shadow-lg w-full h-auto object-cover"
+                    />
+                </div>
 
-                    <div>
-                        <label className="block text-gray-700 font-medium mb-2">Email</label>
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-                        />
-                    </div>
+                {/* Right Side - Contact Form */}
+                <div className="bg-white rounded-2xl shadow-lg p-8">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                        Get In Touch
+                    </h2>
+                    <form className="space-y-6">
+                        <div>
+                            <label className="block text-gray-700 font-medium mb-2">Name</label>
+                            <input
+                                type="text"
+                                placeholder="Your Name"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+                            />
+                        </div>
 
-                    <div>
-                        <label className="block text-gray-700 font-medium mb-2">Message</label>
-                        <textarea
-                            rows="5"
-                            placeholder="Your Message..."
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-                        ></textarea>
-                    </div>
+                        <div>
+                            <label className="block text-gray-700 font-medium mb-2">Email</label>
+                            <input
+                                type="email"
+                                placeholder="Your Email"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+                            />
+                        </div>
 
-                    <div className="flex justify-center">
-                        <button
-                            type="submit"
-                            className="px-6 py-3 bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition"
-                        >
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+                        <div>
+                            <label className="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea
+                                rows="5"
+                                placeholder="Your Message..."
+                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+                            ></textarea>
+                        </div>
+
+                        <div className="flex justify-center">
+                            <button
+                                type="submit"
+                                className="px-6 py-3 bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition"
+                            >
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            {/* Contact Info */}
+            {/* Contact Info + Map */}
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16">
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                     <h3 className="text-xl font-bold text-gray-800 mb-4">Our Office</h3>
@@ -86,7 +105,10 @@ export default function Contact() {
                         </li>
                         <li className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-sky-500" />
-                            <a href="mailto:shreem.sofware.solutions@gmail.com" className="hover:text-sky-700 transition">
+                            <a
+                                href="mailto:shreem.sofware.solutions@gmail.com"
+                                className="hover:text-sky-700 transition"
+                            >
                                 shreem.sofware.solutions@gmail.com
                             </a>
                         </li>

@@ -37,7 +37,7 @@ export default function About() {
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
     return (
-        <div className="px-4 sm:px-8 md:px-16 lg:px-20 mt-10">
+        <div className="px-4 sm:px-8 md:px-16 lg:px-20 mt-8">
             {/* Hero */}
             <section className="h-48 sm:h-56 flex justify-center items-center bg-gradient-to-r text-black rounded-2xl relative overflow-hidden">
                 <motion.h1
@@ -54,11 +54,11 @@ export default function About() {
             </section>
 
             {/* Founder's Section */}
-            <section className="pt-12 pb-16">
+            <section className="pt-8 pb-16">
                 <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center">
                     <div className="w-full md:w-1/2 relative">
                         <div className="absolute -z-10 top-4 left-4 w-full h-full rounded-lg bg-gradient-to-tr from-sky-400 via-blue-300 to-indigo-300 blur-lg"></div>
-                        <img src="/image%208.jpg" alt="about" className="w-full h-auto rounded-lg shadow-xl" />
+                        <img src="/imp14.jpg" alt="about" className="w-full h-auto rounded-lg shadow-xl" />
                     </div>
                     <motion.div className="w-full md:w-1/2 h-auto" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
                         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-sky-600">Founder's Message</h1>
