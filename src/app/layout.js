@@ -27,6 +27,13 @@ export const metadata = {
         "IT consulting",
         "app development",
         "website design",
+        "software company Indore",
+        "web development Indore",
+        "mobile app development Indore",
+        "IT services Khargone",
+        "software solutions Khargone",
+        "best IT company Indore",
+        "top IT company Khargone"
     ],
     authors: [
         {
@@ -44,7 +51,7 @@ export const metadata = {
         siteName: "Shreem Software Solutions",
         images: [
             {
-                url: "/shreem_logo.png", // 512x512 in /public
+                url: "https://shreemsoftwaresolutions.com/shreem_logo.png",
                 width: 1200,
                 height: 830,
                 alt: "Shreem Software Solutions - IT Services & Web Development",
@@ -58,13 +65,13 @@ export const metadata = {
         title: "Shreem Software Solutions | IT Services",
         description:
             "Custom apps, scalable platforms, and IT services. Turning your ideas into intelligent digital solutions.",
-        images: ["/shreem_logo.png"],
+        images: ["https://shreemsoftwaresolutions.com/shreem_logo.png"],
         creator: "@ShreemSoftware", // update if Twitter is created
     },
     icons: {
-        icon: "/favicon.ico", // main favicon
+        icon: "/favicon.ico",
         shortcut: "/favicon.ico",
-        apple: "/apple-touch-icon.png", // for iOS
+        apple: "/apple-touch-icon.png",
         other: [
             {
                 rel: "icon",
@@ -80,7 +87,7 @@ export const metadata = {
             },
         ],
     },
-    manifest: "/site.webmanifest", // optional: for PWA
+    manifest: "/site.webmanifest",
     category: "technology",
     alternates: {
         canonical: "https://shreemsoftwaresolutions.com",
@@ -130,25 +137,41 @@ export default function RootLayout({ children }) {
         <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "Organization",
-                    name: "Shreem Software Solutions",
-                    url: "https://shreemsoftwaresolutions.com",
-                    logo: "https://shreemsoftwaresolutions.com/shreem_logo.png",
-                    sameAs: [
-                        "https://facebook.com/shreemsoftwaresolutions",
-                        "https://linkedin.com/company/shreemsoftwaresolutions",
-                        "https://twitter.com/ShreemSoftware",
-                    ],
-                    contactPoint: {
-                        "@type": "ContactPoint",
-                        telephone: "+91-9876543210", // replace with real business number
-                        contactType: "customer service",
-                        areaServed: "IN",
-                        availableLanguage: "English",
+                __html: JSON.stringify([
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        name: "Shreem Software Solutions",
+                        url: "https://shreemsoftwaresolutions.com",
+                        logo: "https://shreemsoftwaresolutions.com/shreem_logo.png",
+                        sameAs: [
+                            "https://facebook.com/shreemsoftwaresolutions",
+                            "https://linkedin.com/company/shreemsoftwaresolutions",
+                            "https://twitter.com/ShreemSoftware",
+                        ],
+                        contactPoint: {
+                            "@type": "ContactPoint",
+                            telephone: "+91-9876543210", // replace with real business number
+                            contactType: "customer service",
+                            areaServed: "IN",
+                            availableLanguage: "English",
+                        },
                     },
-                }),
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "WebSite",
+                        url: "https://shreemsoftwaresolutions.com",
+                        name: "Shreem Software Solutions",
+                        publisher: {
+                            "@type": "Organization",
+                            name: "Shreem Software Solutions",
+                            logo: {
+                                "@type": "ImageObject",
+                                url: "https://shreemsoftwaresolutions.com/shreem_logo.png",
+                            },
+                        },
+                    },
+                ]),
             }}
         />
         </body>
