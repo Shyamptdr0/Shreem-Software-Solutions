@@ -1,20 +1,57 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Linkedin, Twitter, Facebook } from "lucide-react";
+import {
+    Mail,
+    Phone,
+    MapPin,
+    Clock,
+    Linkedin,
+    Twitter,
+    Facebook,
+    CheckCircle,
+    XCircle,
+} from "lucide-react";
 import Image from "next/image";
+import emailjs from "emailjs-com"; // ✅ Import EmailJS
 
-// 👉 Replace this with your own image (e.g., contact illustration or office photo)
 import contactImg from "../../../public/imp15.jpg";
 
 export default function Contact() {
+    const [status, setStatus] = useState(""); // success | error | loading
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setStatus("loading");
+
+        emailjs
+            .sendForm(
+                "service_acrvlau",
+                "template_bktxq7q",
+                e.target,
+                "4I-MeRZZDv4dc_hqA"
+            )
+            .then(
+                () => {
+                    setStatus("success");
+                    e.target.reset(); // clear form
+                },
+                (error) => {
+                    console.error("EmailJS Error:", error);
+                    setStatus("error");
+                }
+            );
+
+        setTimeout(() => setStatus(""), 4000); // hide toast after 4s
+    };
+
     return (
         <div className="ml-10 mr-10 mt-20">
             {/* Header Section */}
             <section
                 id="contact"
-                className=" flex justify-center items-center  text-black  relative overflow-hidden"
+                className="flex justify-center items-center text-black relative overflow-hidden"
             >
                 <motion.h1
                     className="text-center font-extrabold text-5xl drop-shadow-lg relative z-10"
@@ -24,12 +61,6 @@ export default function Contact() {
                 >
                     Contact Us
                 </motion.h1>
-
-                {/* Glow Lights */}
-                <div className="absolute w-40 h-40 bg-white/30 rounded-full blur-3xl -top-12 left-12 animate-pulse mix-blend-overlay"></div>
-                <div className="absolute w-52 h-52 bg-sky-300/30 rounded-full blur-3xl bottom-0 right-12 animate-bounce mix-blend-overlay"></div>
-                <div className="absolute w-32 h-32 bg-indigo-400/30 rounded-full blur-2xl top-1/2 left-1/3 animate-ping mix-blend-overlay"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 mix-blend-soft-light pointer-events-none"></div>
             </section>
 
             {/* Contact Section (Image + Form) */}
@@ -44,16 +75,18 @@ export default function Contact() {
                 </div>
 
                 {/* Right Side - Contact Form */}
-                <div className="bg-white rounded-2xl shadow-lg p-8">
+                <div className="bg-white rounded-2xl shadow-lg p-8 relative">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                         Get In Touch
                     </h2>
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Name</label>
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Your Name"
+                                required
                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
                             />
                         </div>
@@ -62,7 +95,9 @@ export default function Contact() {
                             <label className="block text-gray-700 font-medium mb-2">Email</label>
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Your Email"
+                                required
                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
                             />
                         </div>
@@ -70,8 +105,10 @@ export default function Contact() {
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Message</label>
                             <textarea
+                                name="message"
                                 rows="5"
                                 placeholder="Your Message..."
+                                required
                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
                             ></textarea>
                         </div>
@@ -79,69 +116,56 @@ export default function Contact() {
                         <div className="flex justify-center">
                             <button
                                 type="submit"
-                                className="px-6 py-3 bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition"
+                                disabled={status === "loading"}
+                                className="px-6 py-3 bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition disabled:opacity-50"
                             >
-                                Send Message
+                                {status === "loading" ? "Sending..." : "Send Message"}
                             </button>
                         </div>
                     </form>
+
+                    {/* ✅ Toast Notification */}
+                    {status === "success" && (
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-100 border border-green-400 text-green-700 px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg">
+                            <CheckCircle className="w-5 h-5" /> Message Sent Successfully!
+                        </div>
+                    )}
+                    {status === "error" && (
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-red-100 border border-red-400 text-red-700 px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg">
+                            <XCircle className="w-5 h-5" /> Oops! Something went wrong.
+                        </div>
+                    )}
                 </div>
             </div>
 
-            {/* Contact Info + Map */}
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16">
+            {/* Office Info + Google Map */}
+            <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mt-16">
+                {/* Office Info */}
                 <div className="bg-white rounded-2xl shadow-lg p-8">
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">Our Office</h3>
-                    <ul className="space-y-4 text-gray-700">
-                        <li className="flex items-center gap-3">
-                            <MapPin className="w-5 h-5 text-sky-500" />
-                            Nutan Nagar, Near Santoshi Temple, Khargone, MP - 451001
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <Phone className="w-5 h-5 text-sky-500" />
-                            <a href="tel:+919876543210" className="hover:text-sky-700 transition">
-                                +91 98765 43210
-                            </a>
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <Mail className="w-5 h-5 text-sky-500" />
-                            <a
-                                href="mailto:shreem.sofware.solutions@gmail.com"
-                                className="hover:text-sky-700 transition"
-                            >
-                                shreem.sofware.solutions@gmail.com
-                            </a>
-                        </li>
+                    <h2 className="text-xl font-bold mb-6">Our Office</h2>
+                    <p className="flex items-center gap-3 mb-4"><MapPin className="text-sky-500" /> Nutan Nagar, Near Santoshi Temple, Khargone, MP - 451001</p>
+                    <p className="flex items-center gap-3 mb-4"><Phone className="text-sky-500" /> +91 98765 43210</p>
+                    <p className="flex items-center gap-3 mb-4"><Mail className="text-sky-500" /> shreem.sofware.solutions@gmail.com</p>
+                    <p className="flex items-center gap-3 mb-4"><Clock className="text-sky-500" /> Mon - Sat: 10:00 AM - 5:00 PM</p>
 
-                        <li className="flex items-center gap-3">
-                            <Clock className="w-5 h-5 text-sky-500" />
-                            Mon - Sat: 10:00 AM - 5:00 PM
-                        </li>
-                    </ul>
-
-                    {/* Social Icons */}
-                    <div className="flex gap-5 mt-6">
-                        <a href="#" className="text-sky-500 hover:text-sky-700">
-                            <Linkedin size={24} />
-                        </a>
-                        <a href="#" className="text-sky-500 hover:text-sky-700">
-                            <Twitter size={24} />
-                        </a>
-                        <a href="#" className="text-sky-500 hover:text-sky-700">
-                            <Facebook size={24} />
-                        </a>
+                    {/* Social Links */}
+                    <div className="flex gap-6 mt-4 text-sky-500">
+                        <a href="#"><Linkedin size={24} /></a>
+                        <a href="#"><Twitter size={24} /></a>
+                        <a href="#"><Facebook size={24} /></a>
                     </div>
                 </div>
 
                 {/* Google Map */}
                 <div className="rounded-2xl overflow-hidden shadow-lg">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.6586658323907!2d75.61572237465634!3d21.833693859930557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f95a1f5f3df9%3A0x85c5f3a52a1cbe29!2sSantoshi%20Temple%2C%20Khargone%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1691760476273!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.123456789!2d75.613!3d21.833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2sShreem%20Software%20Solutions!5e0!3m2!1sen!2sin!4v1700000000000"
                         width="100%"
                         height="350"
+                        style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
-                        className="border-0 w-full h-[350px]"
+                        referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                 </div>
             </div>
