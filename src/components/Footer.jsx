@@ -1,114 +1,126 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../public/Shreem logo 2.png";
+import logo from "../../public/logo new .png";
 
 export default function Footer() {
-    return (
-        <footer id="contact" className="bg-white text-black py-16">
-            <div className="container mx-auto px-6">
-                <div className="grid md:grid-cols-4 gap-8 mb-12">
-                    {/* Logo Section */}
-                    <div>
-                        <div className="flex text-5xl font-bold text-black mb-4">
-                            <div>
-                                <Image src={logo} alt="Shreem Logo" className="h-13 w-10"/>
-                            </div>
-                            <div className="flex items-center mt-4">
-                               <span className="text-[40px] mb-2 font-semibold text-black">
-                                      Shreem
-                               </span>
-                            </div>
-                        </div>
-                    </div>
+	return (
+		<footer id="contact" className="bg-gray-50 text-gray-800 pt-20 pb-10 mt-10 border-t border-gray-200">
+			<div className="container mx-auto px-6">
 
-                    {/* Quick Links */}
-                    <div>
-                        <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-                        <ul className="space-y-2">
-                            <li>
-                                <Link href="/" className="text-black hover:text-sky-600 transition-colors">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/About" className="text-black hover:text-sky-600 transition-colors">
-                                    About Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/Service" className="text-black hover:text-sky-600 transition-colors">
-                                    Our Service
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/Portfolio" className="text-black hover:text-sky-600 transition-colors">
-                                    Portfolio
-                                </Link>
-                            </li>
-                    
-                        </ul>
-                    </div>
+				{/* Main Grid */}
+				<div className="grid md:grid-cols-4 gap-10 mb-16">
 
-                    {/* Services */}
-                    <div>
-                        <h3 className="text-xl font-bold mb-4">Our Service</h3>
-                        <ul className="space-y-2">
-                            <li>Web Development</li>
-                            <li>App Development</li>
-                            <li>AI Solutions</li>
-                            <li>Website Maintenance & Hosting</li>
-                            <li>IT Consulting</li>
-                        </ul>
-                    </div>
+					{/* Logo Section */}
+					<div>
+						<div className="mb-4">
+							<Image
+								src={logo}
+								alt="Shreem Logo"
+								className="w-50 h-15 "
+							/>
+						</div>
 
-                    {/* Contact Info */}
-                    <div>
-                        <h3 className="text-xl font-bold mb-4">Contact Info</h3>
-                        <div className="space-y-3">
-                            <div className="flex items-center space-x-3">
-                                <i className="ri-map-pin-line text-purple-700"></i>
-                                <span> Nutan Nagar, Near Santoshi Temple, Khargone, MP - 451001</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <i className="ri-phone-line text-purple-700"></i>
-                                <a href="tel:+919876543210" className="hover:text-sky-600 transition">
-                                    +91 98765 43210
-                                </a>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <i className="ri-mail-line text-purple-700"></i>
-                                <a href="mailto:shreem.sofware.solutions@gmail.com" className="hover:text-sky-600 transition">
-                                    shreem.sofware.solutions@gmail.com
-                                </a>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <i className="ri-time-line text-purple-700"></i>
-                                <span>Mon-Sat: 10AM-5PM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<p className="text-gray-600 leading-relaxed mt-3">
+							Empowering businesses with modern tech solutions — from web apps to AI-driven products.
+						</p>
+					</div>
 
-                {/* Bottom Footer */}
-                <div className="border-t border-gray-700 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center">
-                        <p className="text-gray-400 mb-4 md:mb-0">
-                            © 2025 Shreem Software Solutions. <br/> All rights reserved.
-                        </p>
-                        <div className="flex space-x-6">
-                            <Link href="#" className="text-gray-400 hover:text-purple-600 transition-colors">
-                                Privacy Policy
-                            </Link>
-                            <Link href="#" className="text-gray-400 hover:text-purple-600 transition-colors">
-                                Terms of Service
-                            </Link>
-                            <Link href="#" className="text-gray-400 hover:text-purple-600 transition-colors">
-                                Cookie Policy
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    );
+					{/* Quick Links */}
+					<div>
+						<h3 className="text-xl font-semibold mb-5 text-gray-900">
+							Quick Links
+						</h3>
+						<ul className="space-y-3">
+							{[
+								{ label: "Home", href: "/" },
+								{ label: "About Us", href: "/About" },
+								{ label: "Our Services", href: "/Service" },
+								{ label: "Portfolio", href: "/Portfolio" },
+							].map((link, i) => (
+								<li key={i}>
+									<Link
+										href={link.href}
+										className="text-gray-700 hover:text-sky-600 transition-all"
+									>
+										{link.label}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					{/* Services */}
+					<div>
+						<h3 className="text-xl font-semibold mb-5 text-gray-900">Our Services</h3>
+						<ul className="space-y-3 text-gray-700">
+							<li>Web Development</li>
+							<li>App Development</li>
+							<li>AI Solutions</li>
+							<li>Hosting & Maintenance</li>
+							<li>IT Consulting</li>
+						</ul>
+					</div>
+
+					{/* Contact Info */}
+					<div>
+						<h3 className="text-xl font-semibold mb-5 text-gray-900">Contact Info</h3>
+
+						<ul className="space-y-4 text-gray-700">
+
+							<li className="flex items-start space-x-3">
+								<i className="ri-map-pin-line text-sky-600 text-xl"></i>
+								<span>Nutan Nagar, Near Santoshi Temple, Khargone, MP - 451001</span>
+							</li>
+
+							<li className="flex items-center space-x-3">
+								<i className="ri-phone-line text-sky-600 text-xl"></i>
+								<a href="tel:+919876543210" className="hover:text-sky-600 transition">
+									+91 98765 43210
+								</a>
+							</li>
+
+							<li className="flex items-center space-x-3">
+								<i className="ri-mail-line text-sky-600 text-xl"></i>
+								<a
+									href="mailto:shreem.sofware.solutions@gmail.com"
+									className="hover:text-sky-600 transition break-all"
+								>
+									shreem.sofware.solutions@gmail.com
+								</a>
+							</li>
+
+							<li className="flex items-center space-x-3">
+								<i className="ri-time-line text-sky-600 text-xl"></i>
+								<span>Mon–Sat: 10 AM – 5 PM</span>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+
+				{/* Bottom Bar */}
+				<div className="border-t border-gray-300 pt-6">
+					<div className="flex flex-col md:flex-row justify-between items-center">
+						<p className="text-gray-500 text-sm text-center md:text-left">
+							© {new Date().getFullYear()} Shreem Software Solutions. All rights reserved.
+						</p>
+
+						<div className="flex space-x-6 mt-4 md:mt-0">
+							{["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item, i) => (
+								<Link
+									key={i}
+									href="#"
+									className="text-gray-500 text-sm hover:text-sky-600 transition"
+								>
+									{item}
+								</Link>
+							))}
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</footer>
+	);
 }

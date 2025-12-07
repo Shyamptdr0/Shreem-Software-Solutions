@@ -7,9 +7,9 @@ export default function Home() {
         <div className="relative">
             {/* Background only for Home (visible only ≥1200px / xl) */}
             <div className="relative w-full overflow-hidden">
-                <div className="hero-rotated-bg hidden 2xl:block">
-                    <Image src={bgImage} alt="Hero Background" priority />
-                </div>
+                {/*<div className="hero-rotated-bg hidden 2xl:block">*/}
+                {/*    /!*<Image src={bgImage} alt="Hero Background" priority />*!/*/}
+                {/*</div>*/}
                 <Hero />
             </div>
         </div>

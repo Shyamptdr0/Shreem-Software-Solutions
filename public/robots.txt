@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://shreemsoftwaresolutions.com
+
+# Sitemaps
+Sitemap: https://shreemsoftwaresolutions.com/sitemap.xml
